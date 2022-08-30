@@ -69,8 +69,5 @@ function printInhabitant(inhabitant) {
    print(result);
 }
 
-printInhabitant(dog);
-printInhabitant(cat);
-printInhabitant(man);
-printInhabitant(woman);
-printInhabitant(catWoman);
+const inhabitants = [dog, cat, man, woman, catWoman];
+inhabitants.forEach(printInhabitant);
