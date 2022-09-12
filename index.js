@@ -14,7 +14,7 @@ const dog = {
    legs: 4,
    hands: 0,
    saying: "woof-woof!",
-   friends: "Cake",
+   friends: ["Cake"]
 };
 
 const cat = {
@@ -24,7 +24,7 @@ const cat = {
    legs: 4,
    hands: 0,
    saying: "meow!",
-   friends: ["Pie", "Selina"],
+   friends: ["Pie", "Selina"]
 };
 
 const man = {
@@ -34,7 +34,7 @@ const man = {
    legs: 2,
    hands: 2,
    saying: "Hello!",
-   friends: "Dominica",
+   friends: ["Dominica"]
 };
 
 const woman = {
@@ -44,33 +44,30 @@ const woman = {
    legs: 2,
    hands: 1,
    saying: "Hello!",
-   friends: ["Dominic", "Selina"],
+   friends: ["Dominic", "Selina"]
 };
 
-const catWoman = {
-   species: ["cat", "human"],
-   name: "Selina",
-   gender: "female",
-   legs: 2,
-   hands: 2,
-   saying: cat.saying,
-   friends: ["Cake", "Dominica"],
-};
+const catWoman = Object(cat);
+catWoman.species = "human";
+catWoman.name = "Selina";
+catWoman.gender = "female";
+catWoman.legs = 2;
+catWoman.hands = 2;
+catWoman.friends = ["Cake", "Dominica"];
 
 // ======== OUTPUT ========
 
-function printInhabitant(inhabitant) {
-   let result = "";
+const inhabitants = [dog, cat, man, woman, catWoman];
+const keys = [
+  "species",
+  "name",
+  "gender",
+  "legs",
+  "hands",
+  "saying",
+  "friends",
+];
 
-   for (let val in inhabitant) {
-      result += inhabitant[val] + ";";
-   }
-
-   print(result);
-}
-
-printInhabitant(dog);
-printInhabitant(cat);
-printInhabitant(man);
-printInhabitant(woman);
-printInhabitant(catWoman);
+inhabitants.forEach((inhabitant) =>
+  print(keys.map((key) => inhabitant[key]).join("; "))
+);
