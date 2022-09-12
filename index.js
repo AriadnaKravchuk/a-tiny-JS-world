@@ -65,7 +65,7 @@ const keys = [
   "legs",
   "hands",
   "saying",
-  "friends",
+  "friends"
 ];
 
 inhabitants.forEach((inhabitant) =>
