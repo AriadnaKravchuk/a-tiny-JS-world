@@ -47,27 +47,30 @@ const woman = {
    friends: ["Dominic", "Selina"]
 };
 
-const catWoman = Object(cat);
-catWoman.species = "human";
-catWoman.name = "Selina";
-catWoman.gender = "female";
-catWoman.legs = 2;
-catWoman.hands = 2;
-catWoman.friends = ["Cake", "Dominica"];
+const catWoman = {
+   species: "human",
+   name: "Selina",
+   gender: "female",
+   legs: 2,
+   hands: 2,
+   friends: ["Cake", "Dominica"]
+};
+
+Object.setPrototypeOf(catWoman, cat);
 
 // ======== OUTPUT ========
 
 const inhabitants = [dog, cat, man, woman, catWoman];
 const keys = [
-  "species",
-  "name",
-  "gender",
-  "legs",
-  "hands",
-  "saying",
-  "friends"
+   "species",
+   "name",
+   "gender",
+   "legs",
+   "hands",
+   "saying",
+   "friends"
 ];
 
 inhabitants.forEach((inhabitant) =>
-  print(keys.map((key) => inhabitant[key]).join("; "))
+   print(keys.map((key) => inhabitant[key]).join("; "))
 );
